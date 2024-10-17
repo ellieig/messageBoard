@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { application } from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import path from 'path'
@@ -12,6 +12,8 @@ const __dirname = dirname(__filename);
 app.use(cors())
 app.use(helmet())
 app.use(express.json())
+app.use(bodyParser.urlEncoded({extended:false}));
+app.use(bodyParser.json());
 
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
 
