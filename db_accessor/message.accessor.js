@@ -1,10 +1,10 @@
 import Connection from "../db/connection.js";
 import Message from "..?model/message.js";
 
-export default class MessengeAccessor {
+export default class MessageAccessor {
     static async getMessage (msge_id) {
         try {
-            await Connection.open("teaching_proj");
+            await Connection.open("messageBoard");
             const msge = await Message.findOne({id: msge_id});
             return msge;
         } catch (e) {
@@ -14,7 +14,7 @@ export default class MessengeAccessor {
 
     static async createMessage (messageInfo) {
         try {
-            await Connection.open("teaching-proj");
+            await Connection.open("messageBoard");
             const msge = await Message.create(messageInfo);
             return msge;
         } catch (e) {
