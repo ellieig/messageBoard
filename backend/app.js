@@ -26,8 +26,8 @@ app.get('*', (req, res) => {
 });
 
 const HOSTNAME = 'localhost';
-const PORT = 3000;
+const PORT = 5000;
 
 app.listen(PORT, HOSTNAME, () => {
-    console.log(`Server running at http://${HOSTNAME}:${PORT}/`)
+    console.log(`Server running at http://${HOSTNAME}:${PORT}/`);
 });
