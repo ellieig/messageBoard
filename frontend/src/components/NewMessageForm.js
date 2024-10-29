@@ -1,5 +1,5 @@
+// handles how you see the form when you interact with it
 import React, { useState } from 'react';
-
 const NewMessageForm = () => {
     const [formData, setFormData] = useState({
         id: '',
@@ -7,22 +7,19 @@ const NewMessageForm = () => {
         content: '',
         from: '',
     });
-
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
-
     const handleSubmit = async (e) => {
         try {
             const response = await fetch('http://localhost:5000/create-message', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             });
-
             if (response.ok) {
-                setFormData({ id: '', to: '', content: '', from: ''});
+                setFormData({ id: '', to: '', content: '', from: '' });
             } else {
                 const err = await response.json();
                 console.log(err);
@@ -31,7 +28,6 @@ const NewMessageForm = () => {
             console.log(error);
         }
     };
-
     return (
         <form onSubmit={handleSubmit}>
             <div>
@@ -54,5 +50,4 @@ const NewMessageForm = () => {
         </form>
     );
 };
-
 export default NewMessageForm;

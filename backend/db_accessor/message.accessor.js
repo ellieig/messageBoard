@@ -1,5 +1,5 @@
 import Connection from "../db/connection.js";
-import Message from "..?model/message.js";
+import Message from "../model/message.js";
 
 export default class MessageAccessor {
     static async getMessage (msge_id) {
@@ -27,7 +27,7 @@ export default class MessageAccessor {
             await Connectionopen("messageBoard");
             const msge = await Message.findOneAndReplace({id: msge_id}, updatedInfo, {new: true, runValidators: true});
             /*
-            new:true says that msge is going to reflect the replaced data
+            new: true says that msge is going to reflect the replaced data
             runValidators: true says "make sure the data you're replacing fits the schema"
             */
             return msge;
