@@ -55,4 +55,16 @@ export default class MessageAccessor {
             console.log("Failed due to:", e);
         }
     }
+
+    static async getMessages() {
+        try{
+            await Connection.open("messageBoard");
+            const messages = [];
+            for await(const doc of Message.find()){
+                messages.push(doc);
+            }
+        } catch (e) {
+            console.log("Something bad will happen because:" (e))
+        }
+    }
 }

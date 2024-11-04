@@ -42,13 +42,22 @@ export default class MessageController {
         }
     }
 
-    static async deleteMessage (req, res) {
+    static async deleteMessage(req, res) {
         try {
             const m_id = req.params._id;
             const deletion = await MessageAccessor.deleteMessage(m_id);
             res.redirect ("/");
         } catch (e) {
             console.log("Failed due to:", e);
+        }
+    }
+
+    static async getMessages(req, res) {
+        try {
+            const messages = await MessageAccessor.getMessages();
+            res.render(messages);
+        } catch (e) {
+            console.log("Something bad happened due to:", e);
         }
     }
 }
