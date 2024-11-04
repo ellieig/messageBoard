@@ -14,7 +14,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/create-message" elements={<NewMessageForm />} />
+        <Route path="/create-message" element={<NewMessageForm />} />
         <Route path="/" element={<DisplayAllMessages />} />
       </Routes>
     </Router>
