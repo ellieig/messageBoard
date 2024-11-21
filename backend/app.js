@@ -4,16 +4,23 @@ import helmet from 'helmet';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import router from './backend/routes/message.route.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    credentials: true,
+    allowedHeaders: ['Content-Type']
+}));
 app.use(helmet());
 app.use(express.json());
 app.use(bodyParser.urlEncoded({extended:false}));
 app.use(bodyParser.json());
+app.use("/", router);
 
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
 

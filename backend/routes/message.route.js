@@ -11,3 +11,5 @@ router.put("/replace-message/:id", MessageController.replaceMessage);
 router.patch("/update-message/:id", MessageController.updateMessage);
 router.delete("/delete-message/:id", MessageController.deleteMessage);
 router.route("/messages").get(MessageController.getMessages);
+
+export default router;
