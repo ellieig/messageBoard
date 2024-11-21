@@ -4,8 +4,8 @@ export default class MessageController {
     static async getMessageById(req, res) {
         try {
             const m_id = req.params._id;
-            const messge = await MessageAccessor.getMessage(m_id);
-            res.json(messge);
+            const message = await MessageAccessor.getMessage(m_id);
+            res.json(message);
         } catch (e) {
             throw e;
         }
