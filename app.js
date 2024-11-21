@@ -2,6 +2,7 @@ import express, { application } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import path from 'path';
+import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import router from './backend/routes/message.route.js';
@@ -18,7 +19,7 @@ app.use(cors({
 }));
 app.use(helmet());
 app.use(express.json());
-app.use(bodyParser.urlEncoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use("/", router);
 

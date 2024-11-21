@@ -17,7 +17,7 @@ const MessageSchema = new Schema (
     }
 );
 
-const db = mongoose.connection.useDb("messageBoard");
+const db = mongoose.connection.useDb("teaching_proj");
 const Message = db.model("Message", MessageSchema);
 
 export default Message; 

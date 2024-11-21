@@ -9,8 +9,6 @@ export default class Connection {
         const DATABASE_URL = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_CLUSTER}.xtdufxk.mongodb.net/?retryWrites=true&w=majority`;
 
     mongoose.connect(DATABASE_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
         maxPoolSize: 50,
         socketTimeoutMS: 2500,
         dbName: db

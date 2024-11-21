@@ -1,13 +1,10 @@
 {
   "name": "messageboard",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "build:css": "tailwindcss -i ./styles/input.css -o ./styles/output.css",
-    "watch:css": "tailwindcss -i ./styles/input.css -o ./styles/output.css --watch",
     "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
-    "dev": "concurrently \"npm run watch:css\" \"npm run start\"",
     "start-backend": "node app.js",
     "start-frontend": "cd frontend && npm start"
   },

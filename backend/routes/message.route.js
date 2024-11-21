@@ -1,5 +1,5 @@
 
-import expess from "express";
+import express from "express";
 import MessageController from "../controller/message.controller.js";
 import path from "path";
 
