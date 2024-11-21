@@ -32,7 +32,7 @@ export default class MessageAccessor {
             */
             return msge;
         } catch (e) {
-            console.log("Failled due to:", e);
+            console.log("Failed due to:", e);
         }
     }
 
@@ -62,7 +62,7 @@ export default class MessageAccessor {
             const messages = await Message.find({});
             return messages;
         } catch (e) {
-            console.log("Something bad will happen because:" (e))
+            console.log("Something bad will happen because:" (e));
         }
     }
 }
